@@ -1,0 +1,62 @@
+[
+    {
+        "question": "toto2",
+        "info": true
+    },
+    {
+        "question": "toto jolie",
+        "info": true
+    },
+    {
+        "question": "lalalalala",
+        "info": false,
+        "miage": false
+    },
+    {
+        "question": "",
+        "info": false,
+        "miage": false
+    },
+    {
+        "question": "",
+        "info": false,
+        "miage": false
+    },
+    {
+        "question": "",
+        "info": false,
+        "miage": false
+    },
+    {
+        "question": "conard",
+        "info": false,
+        "miage": true,
+        "reponse0": true,
+        "reponse1": true,
+        "reponse2": true
+    },
+    {
+        "question": "zaazaz",
+        "info": false,
+        "miage": false,
+        "reponse0": "",
+        "reponse1": "",
+        "reponse2": "azaz"
+    },
+    {
+        "question": "",
+        "info": false,
+        "miage": false,
+        "reponse0": "",
+        "reponse1": "",
+        "reponse2": "azazaz"
+    },
+    {
+        "question": "aaaa",
+        "info": false,
+        "miage": false,
+        "reponse0": "",
+        "reponse1": "",
+        "reponse2": null
+    }
+]
