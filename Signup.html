@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login et mot de passe</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="Style.css">
+    
+    </head>
+
+    <body>
+        <div class="loginbox">
+            <img src="avatar.png" class="avatar">
+            <h1> login here</h1>
+            <form id="nameEm">
+                <p>Username</p>
+                <input type="text" id="email" name=""placeholder="Enter Email">
+                <div id="match-list"></div>
+                <p>Password</p>
+                <input type="Password" id="pswd" name=""placeholder="Enter Password">
+                <div id="nameEm">
+                    <input type="button" value="sign me up" onclick="login:signup(document.getElementById('email').value, document.getElementById('pswd').value);">
+                </div>
+                <p> Déja Inscrit : retour a la page de connexion</p>
+                <input type="button" value="Se Connecter" onclick="window.location.href='index.html'">
+            </form>
+
+            <span id="timer"> </span>
+        </div>
+        
+
+    
+        <script src="login.js"></script>
+   </body>
+</html>
