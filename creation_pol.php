@@ -13,15 +13,13 @@
     $question = htmlspecialchars($_GET["question"]);
     $info = isset($_GET["info"]);
     $miage = isset($_GET["miage"]);
-    $reponse0 = $_GET["reponse0"];
-    $reponse1 = $_GET["reponse1"];
-    $reponse2 = $_GET["reponse2"];
 
-    $pol = array("question" => $question,"info" => $info,"miage" => $miage,"reponse0" => $reponse0,"reponse1" => $reponse1)
-    $i = 2;
+    $pol = array("question" => $question,"info" => $info,"miage" => $miage);
+    $i = 0;
     while (isset($_GET["reponse$i"]))
     {
-      pol[] = "reponse$i" => $_GET["reponse$i"];
+      $pol["reponse$i"] = $_GET["reponse$i"];
+      $i++;
     }
 
     array_push($data,$pol);
@@ -29,7 +27,7 @@
     file_put_contents('pol.json', $newJsonString);
     ?>
     Merci d'avoir crée le sondage
-    <a href="creer.php"> Retour à la maison</a>
+    <a href="creer.html"> Retour à la maison</a>
 
   </body>
 </html>
