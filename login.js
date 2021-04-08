@@ -1,23 +1,32 @@
-function signup(email,pwd){
+function signup(email,pwd,pwdc){
+  if(pwd != pwdc)
+  {
+      $('#result').text("Les deux mots de passe ne correspondent pas !");
+  }
+  else {
     $.ajax({
     method: "GET",
     url: "sign.php",
     data: {"AUTH_USER": email ,
                 "AUTH_PW" : pwd },
     }).done(function(e) {
-        $('span').remove();
-        if(e !== "False"){
-          $ladiv =  "<span> Compte Creé </span> <br><br>";
-          redir();}
+        if(e === "False"){
+          $('#result').text("Mauvais email ou mot de passe !");
+          }
         else if(e === "Existe"){
-          $ladiv =  "<span id='wrong'> Compte Existe Déja ! </span>"}
-        else{
-          $ladiv =  "<span id='wrong'> Mauvais email ou mot de passe ! </span>"
+          $('#result').text("Le compte existe déja !");
         }
-        $('#nameEM').append($ladiv);
+        else if(e === "Inconnu"){
+          $('#result').text("L'email n'est pas dans la whitelist !");
+        }
+        else{
+          $('#result').text("Compte Creé");
+          redir();
+        }
     }).fail(function(e) {
     console.log(e);
     });
+  }
 }
 
 function redir(){
@@ -49,7 +58,7 @@ const searchUsername = async searchText => {
         matches = [];
         matchList.innerHTML = '';
     }else{
-        matchList.innerHTML = 'Unfound Username, Please Try again !';
+        matchList.innerHTML = 'Email introuvable !';
     }
 
     outputHtml(matches);
@@ -64,7 +73,6 @@ const outputHtml = matches => {
         `).join('');
 
         matchList.innerHTML = html;
-
     }
 
 };
