@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "C:\wamp64\www\Prog web\Vote-en-ligne\auth_user\.htpasswd"
+Require valid-user

@@ -104,5 +104,22 @@
         "reponse2": "az",
         "reponse3": "eze",
         "reponse4": "fini"
+    },
+    {
+        "question": "",
+        "info": false,
+        "miage": false,
+        "reponse0": "",
+        "reponse1": "",
+        "reponse2": "zerze"
+    },
+    {
+        "question": "test auth",
+        "info": true,
+        "miage": false,
+        "createur": "bourdet",
+        "reponse0": "\u00e7a marche?",
+        "reponse1": "oui",
+        "reponse2": "non"
     }
 ]

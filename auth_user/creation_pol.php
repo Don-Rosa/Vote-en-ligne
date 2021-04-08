@@ -14,7 +14,7 @@
     $info = isset($_GET["info"]);
     $miage = isset($_GET["miage"]);
 
-    $pol = array("question" => $question,"info" => $info,"miage" => $miage);
+    $pol = array("question" => $question,"info" => $info,"miage" => $miage,"createur" => $_SERVER['REMOTE_USER']);
     $i = 0;
     while (isset($_GET["reponse$i"]))
     {
@@ -27,7 +27,7 @@
     file_put_contents('pol.json', $newJsonString);
     ?>
     Merci d'avoir crée le sondage
-    <a href="creer.html"> Retour à la maison</a>
+    <a href="creer.php"> Retour à la maison</a>
 
   </body>
 </html>
