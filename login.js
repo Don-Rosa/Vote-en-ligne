@@ -7,10 +7,12 @@ function signup(email,pwd){
     }).done(function(e) {
         $('span').remove();
         if(e !== "False"){
-        $ladiv =  "<span> Compte Creé </span> <br><br>";
-        redir();
-        }else{
-        $ladiv =  "<span id='wrong'> Compte Existe Déja </span>"
+          $ladiv =  "<span> Compte Creé </span> <br><br>";
+          redir();}
+        else if(e === "Existe"){
+          $ladiv =  "<span id='wrong'> Compte Existe Déja ! </span>"}
+        else{
+          $ladiv =  "<span id='wrong'> Mauvais email ou mot de passe ! </span>"
         }
         $('#nameEM').append($ladiv);
     }).fail(function(e) {
@@ -33,8 +35,8 @@ const matchList = document.getElementById('match-list');
 // search json and filter it
 const searchUsername = async searchText => {
     const res = await fetch('INFO.json');
-    const emails = await res.json(); 
- 
+    const emails = await res.json();
+
     //console.log(email);
 
     //Get matches to current text input
@@ -47,8 +49,8 @@ const searchUsername = async searchText => {
         matches = [];
         matchList.innerHTML = '';
     }else{
-        matchList.innerHTML = 'Unfound Username, Pleas Try again !';
-    } 
+        matchList.innerHTML = 'Unfound Username, Please Try again !';
+    }
 
     outputHtml(matches);
 };
@@ -62,11 +64,9 @@ const outputHtml = matches => {
         `).join('');
 
         matchList.innerHTML = html;
-        
+
     }
 
 };
 
 email.addEventListener('input', () => searchUsername(email.value));
-
-

@@ -1,125 +1,28 @@
 [
     {
-        "question": "toto2",
-        "info": true
-    },
-    {
-        "question": "toto jolie",
-        "info": true
-    },
-    {
-        "question": "lalalalala",
-        "info": false,
-        "miage": false
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false
-    },
-    {
-        "question": "conard",
-        "info": false,
-        "miage": true,
-        "reponse0": true,
-        "reponse1": true,
-        "reponse2": true
-    },
-    {
-        "question": "zaazaz",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": "",
-        "reponse2": "azaz"
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": "",
-        "reponse2": "azazaz"
-    },
-    {
-        "question": "aaaa",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": "",
-        "reponse2": null
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": ""
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": ""
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": ""
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": ""
-    },
-    {
-        "question": "\u00e7a marche en ent?",
-        "info": true,
-        "miage": false,
-        "reponse0": "oui",
-        "reponse1": "non",
-        "reponse2": "ent"
-    },
-    {
-        "question": "test2",
-        "info": true,
-        "miage": true,
-        "reponse0": "  zer",
-        "reponse1": "zeez",
-        "reponse2": "az",
-        "reponse3": "eze",
-        "reponse4": "fini"
-    },
-    {
-        "question": "",
-        "info": false,
-        "miage": false,
-        "reponse0": "",
-        "reponse1": "",
-        "reponse2": "zerze"
-    },
-    {
         "question": "test auth",
         "info": true,
         "miage": false,
-        "createur": "bourdet",
+        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
         "reponse0": "\u00e7a marche?",
         "reponse1": "oui",
         "reponse2": "non"
+    },
+    {
+        "question": "Un peu plus de sondage?",
+        "info": false,
+        "miage": false,
+        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
+        "reponse0": "Non",
+        "reponse1": "oui"
+    },
+    {
+        "question": "Toujours plus de sondages?",
+        "info": true,
+        "miage": false,
+        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
+        "reponse0": "oui",
+        "reponse1": "Non",
+        "reponse2": "C'est bon stop, c'est chiant"
     }
 ]

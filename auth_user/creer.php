@@ -8,7 +8,6 @@
   <title>Creer un vote</title>
 </head>
   <body>
-    <?php echo $_SERVER['REMOTE_USER'] ?>
     <form method="GET" action="creation_pol.php">
       <div>La question à poser est:<br/><input type="text" name="question" class="g_texte"><br/></div>
       <div> Réponse 0: <br/> <input type="text" name="reponse0" class="g_texte"><br/></div>

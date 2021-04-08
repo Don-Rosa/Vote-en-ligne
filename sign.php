@@ -3,30 +3,27 @@
 $email = $_GET['AUTH_USER'];
 $pwd = $_GET['AUTH_PW'];
 
-
-$jsonString = file_get_contents('login.json');
-$myObj = json_decode($jsonString, true);
-
-$valid = 1;
-
-foreach($myObj as $a){
-    if( $a["email"] == $email || $pwd == '' || $email == ''){
-        $valid=0;
-        break;
-    }else{
-        $valid=1;
-    }
+if($pwd == '' || $email == '')
+{
+  echo "False";
 }
-
-if($valid ==1){
-       $logins =  array("email"=>$email, "pwd"=>$pwd);
-       $myObj[] = $logins;
-       $logs = json_encode($myObj);
-       file_put_contents('login.json', $logs);
-}else{
-    echo "False" ;
+else
+{
+  $file = fopen('auth_user/.htpasswd', 'r+');
+  $exist = false;
+  while (!$exist && ($buffer = fgets($file)) !== false)
+  {
+      $passwd_line = explode(":" , $buffer);
+      $exist = $passwd_line[0] == $email;
+  }
+  if ($exist)
+  {
+    echo "Existe";
+  }
+  else
+  {
+    fwrite($file, "$email:$pwd\n");
+  }
+  fclose($file);
 }
-
-
-
 ?>
