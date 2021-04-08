@@ -24,6 +24,7 @@ else
   {
     fwrite($file, "$email:$pwd\n");
   }
+  
   fclose($file);
 }
 ?>
