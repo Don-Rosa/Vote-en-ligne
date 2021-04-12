@@ -1,9 +1,13 @@
-function signup(email,pwd,pwdc){
-  if(pwd != pwdc)
+function signup(){
+  let email = $('#email').val();
+  let pwd = $('#pwd').val();
+  let pwdC = $('#pwdC').val();
+  if(pwd != pwdC)
   {
       $('#result').text("Les deux mots de passe ne correspondent pas !");
   }
-  else {
+  else
+  {
     $.ajax({
     method: "GET",
     url: "sign.php",
@@ -11,7 +15,7 @@ function signup(email,pwd,pwdc){
                 "AUTH_PW" : pwd },
     }).done(function(e) {
         if(e === "False"){
-          $('#result').text("Mauvais email ou mot de passe !");
+          $('#result').text("Email ou mot de passe incorrect !");
           }
         else if(e === "Existe"){
           $('#result').text("Le compte existe déja !");
@@ -21,7 +25,6 @@ function signup(email,pwd,pwdc){
         }
         else{
           $('#result').text("Compte Creé");
-          redir();
         }
     }).fail(function(e) {
     console.log(e);
@@ -29,52 +32,34 @@ function signup(email,pwd,pwdc){
   }
 }
 
-function redir(){
-document.querySelector('#nameEM')
-    .addEventListener('click',()=> {
-        window.location.href = 'index.html';
-    });
-}
-
-
-
-const search = document.getElementById('search');
-const matchList = document.getElementById('match-list');
-
 // search json and filter it
-const searchUsername = async searchText => {
-    const res = await fetch('INFO.json');
+async function searchUsername(searchText)
+{
+    const res = await fetch('auth_user/INFO.json');
     const emails = await res.json();
-
-    //console.log(email);
 
     //Get matches to current text input
     let matches = emails.filter(email => {
         const regex = new RegExp(`^${searchText}`,'gi');
         return email.email.match(regex);
     });
-
     if (searchText.length === 0){
         matches = [];
-        matchList.innerHTML = '';
+        $('#match-list').html('');
     }else{
-        matchList.innerHTML = 'Email introuvable !';
+        $('#match-list').html('Email introuvable !');
     }
-
     outputHtml(matches);
 };
 
-const outputHtml = matches => {
+function outputHtml(matches)
+{
     if(matches.length > 0){
         const html = matches.map(match => `
             <div class="card card-body mb-1">
                 <h4>${match.email}</h4>
             </div>
         `).join('');
-
-        matchList.innerHTML = html;
+        $('#match-list').html(html);
     }
-
 };
-
-email.addEventListener('input', () => searchUsername(email.value));

@@ -22,8 +22,8 @@ else
   }
   else
   {
-    $newJsonStringInfo = file_get_contents("INFO.json");
-    $newJsonStringMiage = file_get_contents("MIAGE.json");
+    $newJsonStringInfo = file_get_contents("auth_user/INFO.json");
+    $newJsonStringMiage = file_get_contents("auth_user/MIAGE.json");
     $infoJson = json_decode($newJsonStringInfo);
     $miageJson = json_decode($newJsonStringMiage);
 
