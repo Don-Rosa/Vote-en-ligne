@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../Style.css">
+  <link rel="stylesheet" type="text/css" href="creer.css">
   <title>Tableau de bord</title>
 </head>
   <body>
+   <img src="Saclay-.png" class="saclay-">
     <?php
     $newJsonStringInfo = file_get_contents("INFO.json");
     $newJsonStringMiage = file_get_contents("MIAGE.json");

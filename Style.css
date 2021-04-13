@@ -61,3 +61,12 @@ h1{
     color: #fff;
     font-size: 16px;
 }
+
+
+.saclay-{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top : 30px;
+    left: 30px;
+ }

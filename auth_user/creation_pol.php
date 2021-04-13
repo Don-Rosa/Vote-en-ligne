@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Sondage crée</title>
+  <link rel="stylesheet" type="text/css" href="creer.css">
 </head>
   <body>
+    <img src="Saclay-.png" class="saclay-">
     <?php
     $newJsonString = file_get_contents('pol.json');
     $data = json_decode($newJsonString);
