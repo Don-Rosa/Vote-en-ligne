@@ -1,4 +1,4 @@
-AuthName "Page d'administration protégée"
+AuthName "Page  réservée aux utilisateurs authentifiés"
 AuthType Basic
-AuthUserFile "/Users/zinedinebedjou/Desktop/PorgWeb/Vote-en-ligne/auth_user/.htpsswd"
+AuthUserFile "C:\wamp64\www\Prog web\Vote-en-ligne\auth_user\.htpasswd"
 Require valid-user

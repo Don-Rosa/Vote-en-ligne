@@ -1,28 +1,30 @@
 [
     {
-        "question": "test auth",
+        "id": "177886842360767ae1317517.17235487",
+        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
+        "clos": false,
+        "vote": [],
+        "question": "merci",
         "info": true,
         "miage": false,
-        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
-        "reponse0": "\u00e7a marche?",
-        "reponse1": "oui",
-        "reponse2": "non"
+        "reponse0": "la ",
+        "nb_reponse0": 0,
+        "reponse1": "famille",
+        "nb_reponse1": 0,
+        "reponse2": "ent",
+        "nb_reponse2": 0
     },
     {
-        "question": "Un peu plus de sondage?",
+        "id": "60767bad1c8ee",
+        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
+        "clos": false,
+        "vote": [],
+        "question": "pd",
         "info": false,
         "miage": false,
-        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
-        "reponse0": "Non",
-        "reponse1": "oui"
-    },
-    {
-        "question": "Toujours plus de sondages?",
-        "info": true,
-        "miage": false,
-        "createur": "jeremie.bourdet@universite-paris-saclay.fr",
-        "reponse0": "oui",
-        "reponse1": "Non",
-        "reponse2": "C'est bon stop, c'est chiant"
+        "reponse0": "pd",
+        "nb_reponse0": 0,
+        "reponse1": "pd",
+        "nb_reponse1": 0
     }
 ]

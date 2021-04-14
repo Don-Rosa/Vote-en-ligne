@@ -16,11 +16,12 @@
     $info = isset($_GET["info"]);
     $miage = isset($_GET["miage"]);
 
-    $pol = array("question" => $question,"info" => $info,"miage" => $miage,"createur" => $_SERVER['REMOTE_USER']);
+    $pol = array("id" => uniqid(rand(),true),"createur" => $_SERVER['REMOTE_USER'],"clos" => false,"vote" => [],"question" => $question,"info" => $info,"miage" => $miage);
     $i = 0;
     while (isset($_GET["reponse$i"]))
     {
       $pol["reponse$i"] = $_GET["reponse$i"];
+      $pol["nb_reponse$i"] = 0;
       $i++;
     }
 
@@ -29,7 +30,7 @@
     file_put_contents('pol.json', $newJsonString);
     ?>
     Merci d'avoir crée le sondage
-    <a href="creer.php"> Retour à la maison</a>
+    <a href="tdb.php"> Retour à la maison</a>
 
   </body>
 </html>

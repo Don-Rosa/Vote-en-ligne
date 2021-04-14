@@ -7,10 +7,11 @@
   <title>Tableau de bord</title>
 </head>
   <body>
+    <a href="creer.php">Creer un sondage?</a>
    <img src="Saclay-.png" class="saclay-">
     <?php
-    $newJsonStringInfo = file_get_contents("INFO.json");
-    $newJsonStringMiage = file_get_contents("MIAGE.json");
+    $newJsonStringInfo = file_get_contents("../INFO.json");
+    $newJsonStringMiage = file_get_contents("../MIAGE.json");
     $infoJson = json_decode($newJsonStringInfo);  #Va chercher des information sur l'utilisateur connecté
     $miageJson = json_decode($newJsonStringMiage);
 
@@ -34,7 +35,10 @@
     $polJson = json_decode($newJsonStringPOL);
     foreach ($polJson as $pol)
     {
-      if ($pol->createur == $rem_user[2]) echo '<pre>'; print_r($pol); echo '</pre>';
+      if ($pol->createur == $rem_user[2])
+      {
+        echo '<pre>'; print_r($pol); echo '</pre>';
+      }
     }
     ?>
   </body>

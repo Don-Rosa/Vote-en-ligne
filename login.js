@@ -33,23 +33,34 @@ function signup(){
 }
 
 // search json and filter it
-async function searchUsername(searchText)
+async function searchUsername(searchText) // a changer en requête ajax propre si le temps
 {
-    const res = await fetch('auth_user/INFO.json');
-    const emails = await res.json();
+    const info = await fetch('INFO.json');
+    let emails = await info.json();
 
     //Get matches to current text input
-    let matches = emails.filter(email => {
+    let matchesinfo = emails.filter(email => {
         const regex = new RegExp(`^${searchText}`,'gi');
         return email.email.match(regex);
     });
+
+    const miage = await fetch('MIAGE.json');
+    emails = await miage.json();
+
+    //Get matches to current text input
+    let matchesmiage = emails.filter(email => {
+        const regex = new RegExp(`^${searchText}`,'gi');
+        return email.email.match(regex);
+    });
+
     if (searchText.length === 0){
         matches = [];
         $('#match-list').html('');
     }else{
         $('#match-list').html('Email introuvable !');
     }
-    outputHtml(matches);
+
+    outputHtml(matchesinfo.concat(matchesmiage));
 };
 
 function outputHtml(matches)
