@@ -53,7 +53,7 @@ function procu(checked,jname,cible)
         }).done(function(e) {
             cible.html(
               e.map(votant => `
-                <div> ${votant.firstname}   ${votant.lastname}  ${votant.email} Nombres de voix:
+                <div> ${votant.firstname}   ${votant.lastname} <br/ > ${votant.email} <br/ > Nombres de voix:
                 <input type= "radio" name="${votant.email}" value="0"> 0
                 <input type= "radio" name="${votant.email}" value="1" checked="checked"> 1
                 <input type= "radio" name="${votant.email}" value="2"> 2
