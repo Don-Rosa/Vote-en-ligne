@@ -8,8 +8,9 @@
   <title>Tableau de bord</title>
 </head>
   <body>
-    <a href="creer.php">Creer un sondage?</a>
    <img src="Saclay-.png" class="saclay-">
+    <div class="tbd">
+    <a href="creer.php">Creer un sondage?</a>
     <?php
     $newJsonStringInfo = file_get_contents("../INFO.json");
     $newJsonStringMiage = file_get_contents("../MIAGE.json");
@@ -121,5 +122,7 @@
       echo "</div>";
     }
     ?>
+    </div>
   </body>
+  
 </html>

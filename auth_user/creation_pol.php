@@ -8,6 +8,7 @@
 </head>
   <body>
     <img src="Saclay-.png" class="saclay-">
+    <div class="tbd">
     <?php
     $newJsonString = file_get_contents('POL.json');
     $data = json_decode($newJsonString);
@@ -60,6 +61,6 @@
     ?>
     Merci d'avoir crée le sondage
     <a href="tdb.php"> Retour à la maison</a>
-
+    </div>
   </body>
 </html>
