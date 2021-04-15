@@ -28,6 +28,22 @@ form{
    padding: 70px 30px;
 }
 
+
+
+
+.tbd{
+   width: 320px;
+   height: 420px;
+   margin: 2rem auto;
+   color: #fff;
+   top: 50%;
+   left: 50%;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   box-sizing: border-box;
+   padding: 0px 30px;
+}
+
 .saclay-{
    width: 250px;
    height: 250px;
@@ -35,3 +51,4 @@ form{
    top : 30px;
    right: 30px;
 }
+
