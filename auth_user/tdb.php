@@ -29,7 +29,7 @@
 
     $rem_user = $findByMail($_SERVER['REMOTE_USER']); # Ici sur l'utilisateur connecté
                   # [0] == firstname ,[1] == lastname ,[2] == email ,[3] == INFO/MIAGE ,
-    echo "<h3>Bienvenue " .$rem_user[0]. " " .$rem_user[1].  " </h3>";
+    echo "<h3>Bienvenue " .$rem_user[0]. " " .$rem_user[1]."  , groupe ".$rem_user[3]." </h3>";
 
     $newJsonStringPOL = file_get_contents("POL.json");
     $polJson = json_decode($newJsonStringPOL,true);
@@ -49,7 +49,7 @@
       {
         $sondages_clos[] = $pol;
       }
-      elseif (($rem_user[3] === "INFO" && $pol['info'] || $rem_user[3] === "MIAGE" && $pol['miage']) && !$pol['clos']) // Vos votes possibles
+      if (($rem_user[3] === "INFO" && $pol['info'] || $rem_user[3] === "MIAGE" && $pol['miage']) && !$pol['clos']) // Vos votes possibles
       {
         $votes[] = $pol;
       }
@@ -68,9 +68,10 @@
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
-        echo"<br /><span>--".$rep[0]."-- Votes pour ce choix : ".$rep[1]."</span>";
+        echo"<br /><span> - - ".$rep[0]." - - </span>";
         $i++;
       }
+      echo "<br/ > Participation : " .$pol['votes_recu']. " / " .$pol['votes_attendus']. "";
       echo "</div>";
     }
     echo "<h4>Vos sondages passés : </h4>";
@@ -82,9 +83,10 @@
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
-        echo"<br /><span>--".$rep[0]."-- Votes pour ce choix : ".$rep[1]."</span>";
+        echo"<br /><span> - - ".$rep[0]." - - Votes reçus : ".$rep[1]."</span>";
         $i++;
       }
+      echo "<br/ > Participation : " .$pol['votes_recu']. " / " .$pol['votes_attendus']. "";
       echo "</div>";
     }
     echo "<h4>Les votes vous concernant : </h4>";
@@ -95,13 +97,15 @@
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
-        echo "<br /><span>--".$rep[0]."-- Votes pour ce choix : ".$rep[1]."</span>";
+        echo "<br /><span> - - ".$rep[0]." - - </span>";
         echo '<input type=button onclick=voter("'.$pol['id'].'","'.$i.'","'.$rem_user[2].'") value=Voter>';
         $i++;
       }
+      echo "<br/ > Participation : " .$pol['votes_recu']. " / " .$pol['votes_attendus']. "";
+      echo "<br /> Auteur : ".$pol['createur']."";
       echo "</div>";
     }
-    echo "<h4>Les votes passés vous concernant : </h4>";
+    echo "<h4>Les votes passé vous concernant : </h4>";
     foreach ($votes_clos as $pol)
     {
       echo "<div>" .$pol['question']. "";
@@ -109,9 +113,11 @@
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
-        echo"<br /><span>--".$rep[0]."-- Votes pour ce choix : ".$rep[1]."</span>";
+        echo"<br /><span> - - ".$rep[0]." - - Votes reçus : ".$rep[1]."</span>";
         $i++;
       }
+      echo "<br/ > Participation : " .$pol['votes_recu']. " / " .$pol['votes_attendus']. "";
+      echo "<br /> Auteur : ".$pol['createur']."";
       echo "</div>";
     }
     ?>

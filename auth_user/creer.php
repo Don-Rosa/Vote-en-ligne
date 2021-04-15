@@ -18,7 +18,7 @@
       <div id="plusplus"></div>
       <input type="button" value="+" onclick="plus_rep()"/> <input id="bouton_moins" class ="hidden" type="button" value="-" onclick="moins_rep()"/><br/>
 
-      Groupe concernés:<br>
+      Groupes concernés:<br>
       <label for="info">Groupe Info</label>
       <input type="checkbox" id="info" name="info"> <br>
       <label for="miage">Groupe Miage</label>

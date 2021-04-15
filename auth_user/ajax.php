@@ -6,18 +6,21 @@ if (isset($_POST['id']) && isset($_POST['numero']) && isset($_POST['votant'])) /
   $newJsonStringPOL = file_get_contents("POL.json");
   $polJson = json_decode($newJsonStringPOL,true);
   $out = "Sondage pas trouvé";
+  $id = htmlspecialchars($_POST['id']);
   foreach ($polJson as $key => $pol)
   {
-    if($pol['id'] == $_POST['id'])
+    if($pol['id'] == $id)
     {
-      if($pol['votes_restants'][$_POST['votant']] == 0 )
+      $votant = htmlspecialchars($_POST['votant']);
+      if($pol['votes_restants'][$votant] == 0 )
       {
           $out = "Erreur, déja voté";
       }
       else
       {
-        $polJson[$key]["reponses"][$_POST['numero']][1]++;
-        $polJson[$key]["votes_restants"][$_POST['votant']]--;//Pour une chercher plus simple, je fais un tableau associatif
+        $polJson[$key]["reponses"][htmlspecialchars($_POST['numero'])][1]++;
+        $polJson[$key]["votes_recu"]++;
+        $polJson[$key]["votes_restants"][$votant]--;//Pour une chercher plus simple, j'utilise un tableau associatif
         $out = "A VOTÉ!";
       }
     }
@@ -31,12 +34,15 @@ elseif(isset($_POST['id']) && isset($_POST['createur']) && isset($_POST['fermer'
   $newJsonStringPOL = file_get_contents("POL.json");
   $polJson = json_decode($newJsonStringPOL,true);
   $out = "Sondage pas trouvé";
-  $fermer = filter_var ($_POST['fermer'], FILTER_VALIDATE_BOOLEAN);
+  $fermer = filter_var (htmlspecialchars($_POST['fermer']), FILTER_VALIDATE_BOOLEAN);
+  $id = htmlspecialchars($_POST['id']);
+
   foreach ($polJson as $key => $pol)
   {
-    if($pol['id'] == $_POST['id'])
+    if($pol['id'] == $id)
     {
-      if($pol['createur'] === $_POST['createur'])
+      $createur = htmlspecialchars($_POST['createur']);
+      if($pol['createur'] === $createur)
       {
         $polJson[$key]["clos"] = $fermer;
         $out = $fermer ? "FIN DES VOTES!" : "REPRISE DES VOTES!";
@@ -53,7 +59,7 @@ elseif(isset($_POST['id']) && isset($_POST['createur']) && isset($_POST['fermer'
 }
 elseif (isset($_POST['jname']))
 {
-  $JsonVotant = file_get_contents($_POST['jname']);
+  $JsonVotant = file_get_contents(htmlspecialchars($_POST['jname']));
   print($JsonVotant);
 }
  ?>
