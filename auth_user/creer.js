@@ -36,3 +36,42 @@ function IsFormValid(event)
   })
   return valid;
 }
+
+function procu(checked,jname,cible)
+{
+  if(!checked)
+  {
+    cible.html('');
+  }
+  else
+  {
+    $.ajax({
+          method: "POST",
+          dataType: "json",
+          url: "ajax.php",
+          data: {"jname": jname}
+        }).done(function(e) {
+            cible.html(
+              e.map(votant => `
+                <div> ${votant.firstname}   ${votant.lastname}  ${votant.email}
+                <input type= "radio" name="${votant.email}" value="0" checked="checked"> 0
+                <input type= "radio" name="${votant.email}" value="1"> 1
+                <input type= "radio" name="${votant.email}" value="2"> 2
+                <input type= "radio" name="${votant.email}" value="3"> 3
+                </div>
+                `).join('')
+              )
+        }).fail(function(e) {
+          alert("Problème avec la requête");
+        });
+  }
+}
+
+$(document).ready(function() {
+  $("#info").click(function(){
+  procu($("#info").is(':checked'),"../INFO.json",$("#votants_info"))
+  });
+  $("#miage").click(function(){
+  procu($("#miage").is(':checked'),"../MIAGE.json",$("#votants_miage"))
+  });
+});

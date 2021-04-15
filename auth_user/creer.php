@@ -9,7 +9,9 @@
 </head>
   <body>
     <img src="Saclay-.png" class="saclay-">
+    <a href="tdb.php"> Retour à la maison</a>
     <form method="GET" onsubmit="return IsFormValid(event)" action="creation_pol.php">
+      <p id="invalid_form"></p>
       <div>La question à poser est:<br/><input type="text" name="question" class="f_texte"><br/></div>
       <div> Réponse 0: <br/> <input type="text" name="reponse0" class="f_texte"><br/></div>
       <div> Réponse 1: <br/> <input type="text" name="reponse1" class="f_texte"><br/></div>
@@ -22,7 +24,8 @@
       <label for="miage">Groupe Miage</label>
       <input type="checkbox" id="miage" name="miage"> <br/>
       <input type="submit" value="Valider"><br/>
-      <p id="invalid_form"></p>
+      <div id="votants_info"></div>
+      <div id="votants_miage"></div>
     </form>
   </body>
 </html>
