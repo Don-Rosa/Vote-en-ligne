@@ -9,7 +9,7 @@ function signup(){
   else
   {
     $.ajax({
-    method: "POST",
+    method: "GET",
     url: "sign.php",
     data: {"AUTH_USER": email ,
                 "AUTH_PW" : pwd },

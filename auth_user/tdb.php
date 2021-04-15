@@ -64,7 +64,7 @@
     {
       echo "<div>" .$pol['question']. "";
       echo '<input type=button onclick=clore("'.$pol['id'].'","'.$rem_user[2].'",true) value=Clore>';
-      echo "<input type='button' value='Détails'>";
+      //echo "<input type='button' value='Détails'>";
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
@@ -78,7 +78,7 @@
     {
       echo "<div>" .$pol['question']. "";
       echo '<input type=button onclick=clore("'.$pol['id'].'","'.$rem_user[2].'",false) value=Rouvrire>';
-      echo "<input type='button' value='Détails'>";
+    //  echo "<input type='button' value='Détails'>";
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
@@ -91,7 +91,7 @@
     foreach ($votes as $pol)
     {
       echo "<div>" .$pol['question']. "";
-      echo "<input type='button' value='Détails'>";
+    //  echo "<input type='button' value='Détails'>";
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
@@ -105,7 +105,7 @@
     foreach ($votes_clos as $pol)
     {
       echo "<div>" .$pol['question']. "";
-      echo "<input type='button' value='Détails'>";
+    //  echo "<input type='button' value='Détails'>";
       $i = 0;
       foreach ($pol['reponses'] as $rep)
       {
